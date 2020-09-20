@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public BattleManager battleManager;
+    public ButtonManager buttonManager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,19 @@ public class PlayerMove : MonoBehaviour
             case BattleManager.Phase.choiceButton:
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
                 {
-                    transform.position -= new Vector3(4.5f, 0, 0);      // 버튼 간의 간격 만큼 왼쪽으로 이동
+                    if ((int)buttonManager.onButton != 0)       // 제일 왼쪽의 버튼이 아닐 경우
+                    {
+                        transform.position -= new Vector3(4.5f, 0, 0);      // 버튼 간의 간격 만큼 왼쪽으로 이동
+                        buttonManager.ChangeButton(-1);
+                    }
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
                 {
-                    transform.position += new Vector3(4.5f, 0, 0);      // 버튼 간의 간격만큼 오른쪽으로 이동
+                    if ((int)buttonManager.onButton != buttonManager.buttons.Length - 1)        // 제일 오른쪽의 버튼이 아닐 경우
+                    {
+                        transform.position += new Vector3(4.5f, 0, 0);      // 버튼 간의 간격만큼 오른쪽으로 이동
+                        buttonManager.ChangeButton(1);
+                    }
                 }
                 else if (Input.GetKeyDown(KeyCode.Z))       // 버튼 선택
                 {
