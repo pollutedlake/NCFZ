@@ -46,6 +46,6 @@ public class ButtonManager : MonoBehaviour
     /// <param name="distance"> 얼마만큼 바꿀 것인지에 대한 변수 </param>
     public void ChangeButton(int distance)
     {
-        onButton = (button)((int)onButton + distance);
+        onButton = (button)(((int)onButton + distance + buttons.Length) % buttons.Length);
     }
 }

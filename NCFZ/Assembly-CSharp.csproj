@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
+    <Compile Include="Assets\Scripts\MonList.cs" />
+    <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/psh95/OneDrive/바탕 화면/상현/공부/Game Programing/NCFZ/NCFZ/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

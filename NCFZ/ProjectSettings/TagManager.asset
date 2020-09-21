@@ -45,3 +45,9 @@ TagManager:
   - name: Player
     uniqueID: 4230362401
     locked: 0
+  - name: AttackBoard
+    uniqueID: 1986537095
+    locked: 0
+  - name: AttackBar
+    uniqueID: 2059519287
+    locked: 0
