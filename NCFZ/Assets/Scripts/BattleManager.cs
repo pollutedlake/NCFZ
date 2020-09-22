@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    public GameObject AttackBar;
     public GameObject AttackBoard;
+    public GameObject AttackBar;
     public GameObject Player;
 
     /// <summary>
     /// 전투 페이즈
     /// choiceButton : Player이 fight, act, item, mercy 중 버튼을 고르는 페이즈
     /// choiceMonster : Player가 선택한 행동의 대상이 되는 몬스터를 고르는 페이즈
+    /// playerAttack : Player가 공격하는 페이즈
+    /// enemyAattack : 적이 공격하는 페이즈
     /// </summary>
     public enum Phase
     {
-        choiceButton, choiceMonster, playerAttack
+        choiceButton, choiceMonster, playerAttack, enemyAttack
     }
 
     static public Phase battlePhase;        // 전투 페이즈

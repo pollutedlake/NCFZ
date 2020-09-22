@@ -46,10 +46,12 @@ public class PlayerMove : MonoBehaviour
                 }
                 else if (Input.GetKeyDown(KeyCode.Z))       // 버튼 선택
                 {
-                    if (buttonManager.onButton == ButtonManager.button.fight)       // fight 버튼 선택 시
+                    switch (buttonManager.onButton)
                     {
-                        BattleManager.battlePhase = BattleManager.Phase.choiceMonster;
-                        transform.position = new Vector3(-6.74f, -0.63f, 0);
+                        case ButtonManager.button.fight:
+                            BattleManager.battlePhase = BattleManager.Phase.choiceMonster;
+                            transform.position = new Vector3(-6.74f, -0.63f, 0);
+                            break;
                     }
                 }
                 break;
@@ -89,7 +91,12 @@ public class PlayerMove : MonoBehaviour
                     }
                     else if (Input.GetKeyDown(KeyCode.Z))
                     {
-
+                        switch (buttonManager.onButton)
+                        {
+                            case ButtonManager.button.fight:
+                                BattleManager.battlePhase = BattleManager.Phase.playerAttack;
+                                break;
+                        }
                     }
                 }
                 break;

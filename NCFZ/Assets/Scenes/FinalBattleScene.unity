@@ -201,6 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312479556}
   - component: {fileID: 312479555}
+  - component: {fileID: 312479557}
   m_Layer: 0
   m_Name: AttackBar
   m_TagString: Untagged
@@ -264,12 +265,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312479554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.67, y: -1.55, z: 0}
+  m_LocalPosition: {x: -7.7, y: -1.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312479557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312479554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186e9e81ad05ff549a5d1d0bd3b02e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
 --- !u!1 &804456937
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +362,7 @@ GameObject:
   - component: {fileID: 919088627}
   - component: {fileID: 919088626}
   - component: {fileID: 919088628}
+  - component: {fileID: 919088629}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -429,6 +444,19 @@ MonoBehaviour:
   monList:
   - {fileID: 1429009219}
   yellowIdx: 0
+  text: {fileID: 919088626}
+--- !u!114 &919088629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919088624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b457fcd76b1a17f4ca53532e3206cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   text: {fileID: 919088626}
 --- !u!1 &1166169755
 GameObject:
@@ -1067,8 +1095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ef6418b48f6e342ba65e0961de3ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackBar: {fileID: 312479554}
   AttackBoard: {fileID: 2029002621}
+  AttackBar: {fileID: 312479554}
   Player: {fileID: 1556789613}
 --- !u!4 &2017822371
 Transform:
