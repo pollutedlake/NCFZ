@@ -1,12 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
+    private static BattleManager instance = null;
+    public static BattleManager Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
     public GameObject AttackBoard;
     public GameObject AttackBar;
     public GameObject Player;
+    public Text Text;
 
     /// <summary>
     /// 전투 페이즈
@@ -20,7 +34,15 @@ public class BattleManager : MonoBehaviour
         choiceButton, choiceMonster, playerAttack, enemyAttack
     }
 
-    static public Phase battlePhase;        // 전투 페이즈
+    public Phase battlePhase;        // 전투 페이즈
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
 
     /// <summary>
     /// 전투 시작 시 변수 초기화 작업
@@ -39,6 +61,28 @@ public class BattleManager : MonoBehaviour
             AttackBar.SetActive(true);
             AttackBoard.SetActive(true);
             Player.SetActive(false);
+            Text.gameObject.SetActive(false);
         }
+    }
+
+    public void ChangechoiceButton()
+    {
+        battlePhase = Phase.choiceButton;
+    }
+
+
+    public void ChangechoiceMonster()
+    {
+        battlePhase = Phase.choiceMonster;
+    }
+
+    public void ChangeplayerAttack()
+    {
+        battlePhase = Phase.playerAttack;
+    }
+
+    public void ChangeenemyAttack()
+    {
+        battlePhase = Phase.enemyAttack;
     }
 }
